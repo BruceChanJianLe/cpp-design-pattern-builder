@@ -10,3 +10,5 @@ endif()
 
 set(ADAPTER_FILES adapter/adapter.cpp)
 add_executable(Adapter ${ADAPTER_FILES})
+
+add_subdirectory(facet-builders)
