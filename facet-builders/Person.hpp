@@ -52,12 +52,12 @@ class Person
         friend std::ostream & operator << (std::ostream & os, const Person & obj)
         {
             return os
-                << "street address: " << obj.street_address
-                << " post code: " << obj.post_code
-                << " city: " << obj.city
-                << " company name: " << obj.company_name
-                << " position: " << obj.position
-                << " annual income: " << boost::lexical_cast<std::string>(obj.annual_income);
+                << "street address: " << obj.street_address << std::endl
+                << "post code: " << obj.post_code << std::endl
+                << "city: " << obj.city << std::endl
+                << "company name: " << obj.company_name << std::endl
+                << "position: " << obj.position << std::endl
+                << "annual income: " << boost::lexical_cast<std::string>(obj.annual_income);
         }
 
         // Friend class
