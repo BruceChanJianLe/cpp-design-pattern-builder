@@ -5,3 +5,4 @@ This repository demonstrates the builder design pattern
 ## Reference
 
 - JetBrainsTV design patterns [link_youtube](https://www.youtube.com/watch?v=j9arNRRoPe8)
+- Conversion operator [link_youtube](https://www.youtube.com/watch?v=UZIaRlrSWcY)
