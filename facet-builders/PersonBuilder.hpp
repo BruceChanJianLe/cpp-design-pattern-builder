@@ -29,6 +29,7 @@ class PersonBuilder
             ;
         }
 
+        // Conversion operator
         operator Person()
         {
             return std::move(person);
