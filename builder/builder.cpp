@@ -62,6 +62,8 @@ struct HtmlBuilder
 {
     // Attributes
     HtmlElement root;
+
+    // Constructor
     HtmlBuilder(std::string root_name)
     {
         root.name = root_name;
@@ -72,6 +74,7 @@ struct HtmlBuilder
     {
         HtmlElement e(child_name, child_text);
         root.elements.emplace_back(e);
+        return *this;
     }
 
     // Return std::string
@@ -90,6 +93,7 @@ struct HtmlBuilder
 int main(int argc, char ** argv)
 {
     // <p>hello</p>
+    std::cout << "ordinary method 1" << "\n===============" << std::endl;
     auto text = "hello";
     std::string output;
     output += "<p>";
@@ -98,6 +102,7 @@ int main(int argc, char ** argv)
     std::cout << output << std::endl;
 
     // <ul><li>hello</li><li>world</li></ul>
+    std::cout << "ordinary method 2" << "\n===============" << std::endl;
     std::string words[] = {"hello", "world"};   // Passing in initializer list {}
     std::ostringstream oss;
     // Opening
@@ -108,4 +113,15 @@ int main(int argc, char ** argv)
     // Closing
     oss << " </ul>";
     std::cout << oss.str() << std::endl;
+
+    // Builder Design Pattern
+    std::cout << 
+    HtmlBuilder builder("ui");
+    builder.add_child("li", "hello").add_child("li", "world");
+    std::cout << builder.str() << std::endl;
+
+    HtmlElement e = HtmlElement::build("ui")->add_child("li", "hello").add_child("li", "world");
+    std::cout << e.str() << std::endl;
+
+    return 0;
 }
