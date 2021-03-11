@@ -11,4 +11,9 @@ endif()
 set(ADAPTER_FILES adapter/adapter.cpp)
 add_executable(Adapter ${ADAPTER_FILES})
 
+
+set(BUILDER_FILES builder/builder.cpp)
+set_source_files_properties(${BUILDER_FILES} PROPERTIES COMPILE_FLAGS "-std=c++1y")
+add_executable(Builder ${BUILDER_FILES})
+
 add_subdirectory(facet-builders)
